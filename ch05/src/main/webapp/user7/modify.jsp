@@ -19,7 +19,7 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");		
 		Connection conn = DriverManager.getConnection(host, user, pass);
 		
-		String sql = "SELECT * FROM USER3 WHERE USER_ID=?";
+		String sql = "SELECT * FROM USER7 WHERE USER_ID=?";
 		PreparedStatement psmt = conn.prepareStatement(sql);
 		psmt.setString(1, user_id);
 		

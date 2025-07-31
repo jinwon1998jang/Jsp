@@ -4,10 +4,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	// 전송 데이터 수신
-	String user_id = request.getParameter("user_id");
+	String id = request.getParameter("id");
 	String name = request.getParameter("name");
-	String hp = request.getParameter("hp");
 	String age = request.getParameter("age");
+	String email = request.getParameter("email");
 	
 	// 데이터베이스 INSERT
 	String host = "jdbc:oracle:thin:@localhost:1521:xe"; 
@@ -24,10 +24,10 @@
 		// SQL 실행 객체 생성
 		String sql = "INSERT INTO USER3 VALUES (?,?,?,?)";
 		PreparedStatement psmt = conn.prepareStatement(sql);
-		psmt.setString(1, user_id);
+		psmt.setString(1, id);
 		psmt.setString(2, name);
-		psmt.setString(3, hp);
-		psmt.setString(4, age);
+		psmt.setString(3, age);
+		psmt.setString(4, email);
 		
 		// SQL 실행
 		psmt.executeUpdate();

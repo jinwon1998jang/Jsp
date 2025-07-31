@@ -20,6 +20,7 @@
 			3)WAS의 part 방식
 			-Tomcat9 버전부터 지원되는 파일 업로드 방식
 			-업로드 파일을 part 객체로 처리됨
+			-별도의 외부 라이브러리 필요없음
 			
 			WAS의 getPart 업로드 설정
 			-Server > context.xml > context태그 allowCasualMultipartParsing="true" 속성 선언

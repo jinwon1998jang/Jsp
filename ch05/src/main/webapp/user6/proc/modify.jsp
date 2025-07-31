@@ -4,10 +4,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	// 전송 데이터 수신
-	String user_id = request.getParameter("user_id");	
+	String seq = request.getParameter("seq");	
 	String name = request.getParameter("name");	
-	String hp = request.getParameter("hp");	
+	String gender = request.getParameter("gender");
 	String age = request.getParameter("age");	
+	String addr = request.getParameter("addr");
 
 	String host = "jdbc:oracle:thin:@localhost:1521:xe"; 
 	String user = "jinwonj96";
@@ -20,8 +21,13 @@
 				
 		Statement stmt = conn.createStatement();
 		
-		String sql = "UPDATE USER3 SET name='" + name+ "', hp='" + hp + "', age=" + age + " ";
-			   sql += "WHERE user_id='"+user_id+"'";
+		String sql = "UPDATE USER6 SET " +
+				 "name=" + name + ", " +				
+	             "age=" + age + ", " +
+	             "gender='" + gender + "', " +
+	             "addr='" + addr + "' " +
+	             "WHERE seq='" + seq + "'";
+
 		
 		stmt.executeUpdate(sql);
 		

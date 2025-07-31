@@ -2,17 +2,17 @@ package vo;
 
 public class User6VO {
 	private int SEQ;
-	private String NAME;
-	private String GENDER;
-	private int AGE;
-	private String ADDR;
-	
 	public int getSEQ() {
 		return SEQ;
 	}
 	public void setSEQ(int sEQ) {
 		SEQ = sEQ;
 	}
+	private String NAME;
+	private String GENDER;
+	private int AGE;
+	private String ADDR;
+	
 	public String getNAME() {
 		return NAME;
 	}
@@ -42,6 +42,5 @@ public class User6VO {
 		return "User6VO [SEQ=" + SEQ + ", NAME=" + NAME + ", GENDER=" + GENDER + ", AGE=" + AGE + ", ADDR=" + ADDR
 				+ "]";
 	}
-	
-	
+
 }

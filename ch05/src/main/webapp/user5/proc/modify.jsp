@@ -5,8 +5,8 @@
 <%
 	// 전송 데이터 수신
 	String name = request.getParameter("name");	
-	String age = request.getParameter("age");	
 	String gender = request.getParameter("gender");
+	String age = request.getParameter("age");	
 	String addr = request.getParameter("addr");
 
 	String host = "jdbc:oracle:thin:@localhost:1521:xe"; 
@@ -20,7 +20,7 @@
 				
 		Statement stmt = conn.createStatement();
 		
-		String sql = "UPDATE USER4 SET " +
+		String sql = "UPDATE USER5 SET " +
 	             "age=" + age + ", " +
 	             "gender='" + gender + "', " +
 	             "addr='" + addr + "' " +

@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="vo.User3VO"%>
+<%@page import="vo.User6VO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -11,7 +11,7 @@
 	String user = "jinwonj96";
 	String pass = "1234";	
 	
-	List<User3VO> users = new ArrayList<>();
+	List<User6VO> users = new ArrayList<>();
 
 	try {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -19,16 +19,17 @@
 		
 		Statement stmt = conn.createStatement();
 		
-		String sql = "SELECT * FROM USER3";
+		String sql = "SELECT * FROM USER6";
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		while(rs.next()){
 			
-			User3VO vo = new User3VO();
-			vo.setUser_id(rs.getString(1));
-			vo.setName(rs.getString(2));
-			vo.setHp(rs.getString(3));
-			vo.setAge(rs.getInt(4));
+			User6VO vo = new User6VO();
+			vo.setSEQ(rs.getInt(1));
+			vo.setNAME(rs.getString(2));
+			vo.setGENDER(rs.getString(3));
+			vo.setAGE(rs.getInt(4));
+			vo.setADDR(rs.getString(5));
 						
 			users.add(vo);
 		}
@@ -45,33 +46,34 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user1::list</title>
+		<title>user6::list</title>
 	</head>
 	<body>
-		<h3>User1 목록</h3>
+		<h3>User6 목록</h3>
 		
 		<a href="../jdbc.jsp">처음으로</a>
 		<a href="./register.jsp">등록하기</a>
 		
 		<table border="1">
 			<tr>
-				<th>아이디</th>
+				<th>SEQ</th>
 				<th>이름</th>
-				<th>휴대폰</th>
+				<th>성별</th>
 				<th>나이</th>
-				<th>관리</th>
+				<th>주소</th>
 			</tr>
 			
-			<% for(User3VO user3VO : users){ %>
+			<% for(User6VO user6VO : users){ %>
 			<tr>
-				<td><%= user3VO.getUser_id() %></td>
-				<td><%= user3VO.getName() %></td>
-				<td><%= user3VO.getHp() %></td>
-				<td><%= user3VO.getAge() %></td>
+				<td><%= user6VO.getSEQ() %></td>
+				<td><%= user6VO.getNAME() %></td>
+				<td><%= user6VO.getGENDER() %></td>
+				<td><%= user6VO.getAGE() %></td>
+				<td><%= user6VO.getADDR() %></td>
 				<td>
 					<!-- 수정하고자 하는 사용자 아이디를 modify.jsp로 전송 -->
-					<a href="./modify.jsp?user_id=<%= user3VO.getUser_id() %>">수정</a>
-					<a href="./delete.jsp?user_id=<%= user3VO.getUser_id() %>">삭제</a>
+					<a href="./modify.jsp?name=<%= user6VO.getNAME() %>">수정</a>
+					<a href="./delete.jsp?name=<%= user6VO.getNAME() %>">삭제</a>
 				</td>
 			</tr>
 			<% } %>

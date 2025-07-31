@@ -8,26 +8,26 @@ public class User7VO {
 	public String getID() {
 		return ID;
 	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setID(String id) {
+		ID = id;
 	}
 	public String getNAME() {
 		return NAME;
 	}
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setNAME(String name) {
+		NAME = name;
 	}
 	public int getAGE() {
 		return AGE;
 	}
-	public void setAGE(int aGE) {
-		AGE = aGE;
+	public void setAGE(int age) {
+		AGE = age;
 	}
 	public String getEMAIL() {
 		return EMAIL;
 	}
-	public void setEMAIL(String eMAIL) {
-		EMAIL = eMAIL;
+	public void setEMAIL(String email) {
+		EMAIL = email;
 	}
 	@Override
 	public String toString() {
