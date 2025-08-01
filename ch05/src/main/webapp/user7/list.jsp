@@ -69,8 +69,8 @@
 				<td><%= user7VO.getEMAIL() %></td>
 				<td>
 					<!-- 수정하고자 하는 사용자 아이디를 modify.jsp로 전송 -->
-					<a href="./modify.jsp?user_id=<%= user7VO.getID() %>">수정</a>
-					<a href="./delete.jsp?user_id=<%= user7VO.getID() %>">삭제</a>
+					<a href="./modify.jsp?id=<%= user7VO.getID() %>">수정</a>
+					<a href="./delete.jsp?id=<%= user7VO.getID() %>">삭제</a>
 				</td>
 			</tr>
 			<% } %>

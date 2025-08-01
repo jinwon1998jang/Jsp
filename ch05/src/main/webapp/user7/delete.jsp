@@ -4,7 +4,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	// 전송 데이터 수신
-	String user_id = request.getParameter("user_id");
+	String id = request.getParameter("id");
 	
 	String host = "jdbc:oracle:thin:@localhost:1521:xe"; 
 	String user = "jinwonj96";
@@ -15,7 +15,7 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = DriverManager.getConnection(host, user, pass);
 		
-		PreparedStatement psmt = conn.prepareStatement("DELETE FROM USER7 ID = ?");
+		PreparedStatement psmt = conn.prepareStatement("DELETE FROM USER7 WHERE ID = ?");
 		psmt.setString(1, id);
 		
 		psmt.executeUpdate();
