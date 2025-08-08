@@ -27,10 +27,9 @@
 		
 		if(rs.next()){
 			user1 = new User1VO();
-			user1.setUser_id(rs.getString(1));
+			user1.setId(rs.getString(1));
 			user1.setName(rs.getString(2));
-			user1.setHp(rs.getString(3));
-			user1.setAge(rs.getInt(4));
+			user1.setAge(rs.getInt(3));
 		}
 		
 		rs.close();
@@ -60,16 +59,13 @@
 			<table border="1">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="user_id" readonly value="<%= user1.getUser_id() %>" placeholder="아이디 입력"/></td>
+					<td><input type="text" name="user_id" readonly value="<%= user1.getId() %>" placeholder="아이디 입력"/></td>
 				</tr>
 				<tr>
 					<td>이름</td>
 					<td><input type="text" name="name" value="<%= user1.getName() %>" placeholder="이름 입력"/></td>
 				</tr>
-				<tr>
-					<td>휴대폰</td>
-					<td><input type="text" name="hp" value="<%= user1.getHp() %>" placeholder="휴대폰 입력(- 포함)"/></td>
-				</tr>
+				
 				<tr>
 					<td>나이</td>
 					<td><input type="number" name="age" value="<%= user1.getAge() %>" placeholder="숫자 입력"/></td>

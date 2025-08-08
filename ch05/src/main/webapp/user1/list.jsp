@@ -25,10 +25,9 @@
 		while(rs.next()){
 			
 			User1VO vo = new User1VO();
-			vo.setUser_id(rs.getString(1));
+			vo.setId(rs.getString(1));
 			vo.setName(rs.getString(2));
-			vo.setHp(rs.getString(3));
-			vo.setAge(rs.getInt(4));
+			vo.setAge(rs.getInt(3));
 						
 			users.add(vo);
 		}
@@ -64,14 +63,13 @@
 			
 			<% for(User1VO user1VO : users){ %>
 			<tr>
-				<td><%= user1VO.getUser_id() %></td>
+				<td><%= user1VO.getId() %></td>
 				<td><%= user1VO.getName() %></td>
-				<td><%= user1VO.getHp() %></td>
 				<td><%= user1VO.getAge() %></td>
 				<td>
 					<!-- 수정하고자 하는 사용자 아이디를 modify.jsp로 전송 -->
-					<a href="./modify.jsp?user_id=<%= user1VO.getUser_id() %>">수정</a>
-					<a href="./delete.jsp?user_id=<%= user1VO.getUser_id() %>">삭제</a>
+					<a href="./modify.jsp?user_id=<%= user1VO.getId() %>">수정</a>
+					<a href="./delete.jsp?user_id=<%= user1VO.getId() %>">삭제</a>
 				</td>
 			</tr>
 			<% } %>
