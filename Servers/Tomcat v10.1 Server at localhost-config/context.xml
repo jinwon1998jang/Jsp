@@ -42,12 +42,38 @@
     />
     
     <Resource
+    	name="jdbc/studydb"
+    	auth="Container"
+    	type="javax.sql.DataSource"
+    	driverClassName="com.mysql.cj.jdbc.Driver"
+    	url="jdbc:mysql://127.0.0.1:3306/studydb"
+    	username="jinwonj96"
+    	password="1234"
+    	maxTotal="13"
+    	maxIdle="13"
+    	maxWaitMillis="3000"
+    />
+    
+    <Resource
     	name="jdbc/shop"
     	auth="Container"
     	type="javax.sql.DataSource"
     	driverClassName="oracle.jdbc.driver.OracleDriver"
     	url="jdbc:oracle:thin:@localhost:1521:xe"
     	username="shop"
+    	password="1234"
+    	maxTotal="13"
+    	maxIdle="13"
+    	maxWaitMillis="3000"
+    />
+    
+        <Resource
+    	name="jdbc/shopERD"
+    	auth="Container"
+    	type="javax.sql.DataSource"
+    	driverClassName="oracle.jdbc.driver.OracleDriver"
+    	url="jdbc:oracle:thin:@localhost:1521:xe"
+    	username="shopERD"
     	password="1234"
     	maxTotal="13"
     	maxIdle="13"
