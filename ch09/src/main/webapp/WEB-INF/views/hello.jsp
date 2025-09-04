@@ -3,11 +3,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>welcome</title>		
+		<title>hello</title>		
 	</head>
 	<body>
-		<h3>Welcome</h3>		
-		<p>Welcome 페이지 입니다.</p>		
+		<h3>Hello</h3>		
+		<p>Hello 페이지 입니다.</p>	
 				
 		<a href="/ch09">메인 이동</a>
 		<a href="/ch09/hello.do">hello</a>

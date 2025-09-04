@@ -14,26 +14,27 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.User1Service;
 
-@WebServlet("/js/user1/getUser1All.do")
-public class GetUser1AllController extends HttpServlet{
+@WebServlet("/js/user1/getUser1.do")
+public class GetUser1Controller extends HttpServlet{
 
 	private User1Service service = User1Service.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		// 목록 데이터 요청
-		List<User1DTO> dtoList = service.findAll();
+		String uid = req.getParameter("uid");
+		
+		// 수정 데이터 요청
+		User1DTO user1DTO = service.findById(uid);
 		
 		// JSON 데이터 변환
 		Gson gson = new Gson();
-		String strJson = gson.toJson(dtoList);
+		String strJson = gson.toJson(user1DTO);
 		
 		// JSON 출력(클라이언트 전송)
 		resp.setContentType("application/json; charset=UTF-8");
 		
 		PrintWriter out = resp.getWriter();
-		out.print(strJson);
-		
+		out.print(strJson);		
 	}
 }
