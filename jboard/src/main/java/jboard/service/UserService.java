@@ -20,7 +20,7 @@ public enum UserService {
 	INSTANCE;
 	
 	private UserDAO dao = UserDAO.getInstance();
-	private final String SENDER = "chhak0503@gmail.com";
+	private final String SENDER = "jinwonj96@gmail.com";
 	
 	public String sendEmailCode(String email) {
 		// Gmail SMTP 서버 설정
@@ -42,7 +42,7 @@ public enum UserService {
 			
 			@Override
 			protected javax.mail.PasswordAuthentication getPasswordAuthentication(){
-				String secret = "dkhbxtkrrbxpyncf";
+				String secret = "aohswqiclrlzafqe";
 				return new PasswordAuthentication(SENDER, secret);
 			}		
 		});

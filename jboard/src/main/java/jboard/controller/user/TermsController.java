@@ -22,8 +22,9 @@ public class TermsController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		TermsDTO termsDTO = service.findById(1);
-
-		req.setAttribute("termsDTO", termsDTO);
+		//System.out.println(termsDTO);
+		
+		req.setAttribute("termsDTO", termsDTO);		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/user/terms.jsp");
 		dispatcher.forward(req, resp);

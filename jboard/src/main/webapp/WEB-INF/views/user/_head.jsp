@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>User</title>
-    <link rel="stylesheet" href="./jboard/css/style.css"/>
+    <link rel="stylesheet" href="/jboard/css/style.css"/>
 </head>
 <body>
     <div id="wrapper">

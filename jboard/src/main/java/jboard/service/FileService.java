@@ -74,7 +74,7 @@ public enum FileService {
 			}
 		}catch (Exception e) {
 			logger.error(e.getMessage());
-		}		
+		}
 		return files;
 	}
 	

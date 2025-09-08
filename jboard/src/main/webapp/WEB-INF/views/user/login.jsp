@@ -4,7 +4,7 @@
 
 	const message = '${requestScope.message}';
 	
-	if(message != null){
+	if(message != ''){
 		alert(message);	
 	}
 	

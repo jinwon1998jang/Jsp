@@ -81,6 +81,16 @@
 			});
 		
 		
+		// 글삭제
+		const btnRemove = document.getElementsByClassName('btnRemove')[0];
+		
+		btnRemove.addEventListener('click', function(e){
+			
+			if(!confirm('정말 삭제 하시겠습니까?')){
+				e.preventDefault();		
+			}
+		});
+		
 		
 	});
 
@@ -122,8 +132,10 @@
         </table>
         
         <div>
-            <a href="#" class="btn btnRemove">삭제</a>
-            <a href="/jboard/article/modify.do" class="btn btnModify">수정</a>
+        	<c:if test="${sessUser.usid eq articleDTO.writer}">
+	            <a href="/jboard/article/delete.do?ano=${articleDTO.ano}" class="btn btnRemove">삭제</a>
+	            <a href="/jboard/article/modify.do" class="btn btnModify">수정</a>
+            </c:if>
             <a href="/jboard/article/list.do" class="btn btnList">목록</a>
         </div>
 
